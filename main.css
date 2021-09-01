@@ -1,0 +1,150 @@
+main {
+  flex-grow: 1;
+  background-image: radial-gradient(
+    circle at center,
+    hsl(200, 100%, 50%),
+    hsl(200, 100%, 15%)
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Info Button Styling */
+main .info {
+  --radius: 1em;
+  display: block;
+  margin: 5% auto;
+  position: relative;
+  background-color: transparent;
+  border: unset;
+  clip-path: circle(var(--radius));
+  transition: clip-path 0.2s linear;
+  color: white;
+  animation: bounce linear 1.5s infinite;
+}
+
+main .info span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(var(--radius) * 2);
+  height: calc(var(--radius) * 2);
+  border-radius: 50%;
+  background-color: #ff1493;
+}
+
+main .info:hover {
+  cursor: pointer;
+  clip-path: circle(22em);
+  animation: unset;
+}
+
+main .info .card {
+  padding: 1em;
+  position: absolute;
+  width: 15em;
+  height: 10em;
+  top: -0.5em;
+  left: -0.5em;
+  z-index: -1;
+  background-color: hsl(200, 100%, 50%);
+  display: grid;
+  grid-template-rows: auto 1fr;
+  border-radius: 0.5em;
+  box-shadow: 0 0 1em 0.2em rgba(255, 255, 255, 0.724);
+}
+
+main .info .card h2 {
+  font-weight: 400;
+}
+
+main .info .card figure {
+  position: relative;
+}
+
+main .info .card img {
+  position: absolute;
+  height: 70%;
+  object-fit: contain;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+@keyframes bounce {
+  75% {
+    transform: translateY(50%);
+  }
+}
+
+/*Text Styling*/
+main > span {
+  display: block;
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+  font-size: 2em;
+  font-weight: 700;
+  position: relative;
+  animation: move 5s ease-in-out infinite;
+  white-space: nowrap;
+}
+
+/* Reflections */
+main span::before {
+  color: transparent;
+  left: 0;
+  bottom: -62%;
+  position: absolute;
+  transform: rotateX(180deg);
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0) 10%,
+    rgba(255, 255, 255, 0.677)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+main .freelance::before {
+  content: "Freelance";
+}
+
+main .webDeveloper::before {
+  content: "Web Developer";
+}
+
+main .freelance {
+}
+
+main .webDeveloper {
+  animation-delay: 0.5s;
+}
+
+@keyframes move {
+  50% {
+    transform: translate(-20vw);
+  }
+
+  70% {
+    transform: translate(0vw);
+  }
+
+  80% {
+    transform: translate(-2vw);
+  }
+}
+
+@media screen and (max-width: 510px) {
+  main > span {
+    font-size: 6.5vw;
+  }
+  main .info {
+    width: 14em;
+    clip-path: unset;
+  }
+}
