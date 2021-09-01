@@ -6,17 +6,22 @@ footer {
   align-items: center;
   padding: 30px;
 }
+footer a {
+    text-decoration: none;
+    color: unset;
+}
 footer .btn {
   position: relative;
   display: block;
   padding: 15px 30px;
   text-transform: uppercase;
-  letter-spacing: 18px;
+  letter-spacing: 15px;
   font-size: 30px;
   margin: 0 30px;
   color: #2196f3;
   background: none;
-  border: none;
+  border: none; 
+  font-weight: 400;
 } 
 footer .btn:hover::before {
     content: "";
