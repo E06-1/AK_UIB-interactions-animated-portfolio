@@ -1,4 +1,80 @@
 main {
-    flex-grow: 1;
-    background-image: radial-gradient(circle at center, hsl(200, 100%, 50%), hsl(200, 100%, 15%));
+  flex-grow: 1;
+  background-image: radial-gradient(
+    circle at center,
+    hsl(200, 100%, 50%),
+    hsl(200, 100%, 15%)
+  );
 }
+
+
+/* Info Button Styling */
+main .info {
+  --radius: 1em;
+  display: block;
+  margin: 5% auto;
+  position: relative;
+  background-color: transparent;
+  border: unset;
+  clip-path: circle(var(--radius));
+  transition: clip-path .2s linear;
+  color: white;
+  animation: bounce linear 1.5s infinite;
+}
+
+main .info span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(var(--radius) * 2);
+  height: calc(var(--radius) * 2);
+  border-radius: 50%;
+  background-color: #ff1493;
+}
+
+main .info:hover {
+  cursor: pointer;
+  clip-path: circle(22em);
+  animation: unset;
+}
+
+main .info .card {
+  padding: 1em;
+  position: absolute;
+  width: 15em;
+  height: 10em;
+  top: -0.5em;
+  left: -0.5em;
+  z-index: -1;
+  background-color: hsl(200, 100%, 50%);
+  display: grid;
+  grid-template-rows: auto 1fr;
+  border-radius: 0.5em;
+  box-shadow: 0 0 1em 0.2em rgba(255, 255, 255, 0.724);
+  
+}
+
+main .info .card h2 {
+    font-weight: 400;
+}
+
+main .info .card figure {
+  position: relative;
+}
+
+main .info .card img {
+  position: absolute;
+  height: 70%;
+  object-fit: contain;
+  inset: 0;
+  margin: auto;
+}
+
+@keyframes bounce {
+    75% {
+        transform: translateY(50%);
+    }
+}
+
+/**/
+
