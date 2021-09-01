@@ -69,7 +69,7 @@ main .info .card img {
   position: absolute;
   height: 70%;
   object-fit: contain;
-  top:0;
+  top: 0;
   bottom: 0;
   left: 0;
   right: 0;
@@ -92,46 +92,68 @@ main > span {
   font-weight: 700;
   position: relative;
   animation: move 5s ease-in-out infinite;
+  white-space: nowrap;
 }
 
 /* Reflections */
 main span::before {
-    color: transparent; 
-    left:0;
-    bottom: -62%;
-    position: absolute;
-    transform: rotateX(180deg);
-    background-image: linear-gradient(rgba(255, 255, 255, 0) 10%, rgba(255, 255, 255, 0.677));
-    -webkit-background-clip: text;
-    background-clip: text;
+  color: transparent;
+  left: 0;
+  bottom: -62%;
+  position: absolute;
+  transform: rotateX(180deg);
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0) 10%,
+    rgba(255, 255, 255, 0.677)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
 }
 
 main .freelance::before {
-    content: "Freelance"
+  content: "Freelance";
 }
 
 main .webDeveloper::before {
-    content: "Web Developer"
+  content: "Web Developer";
 }
 
 main .freelance {
-    
 }
 
 main .webDeveloper {
-    animation-delay: 0.5s;
+  animation-delay: 0.5s;
 }
 
 @keyframes move {
-    50% {
-        transform: translate(-20vw);
-    }
+  50% {
+    transform: translate(-20vw);
+  }
 
-    70% {
-        transform: translate(0vw);
-    }
+  70% {
+    transform: translate(0vw);
+  }
 
-    80% {
-        transform: translate(-2vw);
-    }
+  80% {
+    transform: translate(-2vw);
+  }
+}
+
+@media screen and (max-width: 510px) {
+  main > span {
+    font-size: 6.5vw;
+  }
+  main .info {
+    width: 14em;
+    --radius: 1em;
+    display: block;
+    margin: 5% auto;
+    position: relative;
+    background-color: transparent;
+    border: unset;
+    clip-path: unset;
+    transition: clip-path 0.2s linear;
+    color: white;
+    animation: bounce linear 1.5s infinite;
+  }
 }
