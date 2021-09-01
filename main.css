@@ -9,6 +9,7 @@ main {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  overflow: hidden;
 }
 
 /* Info Button Styling */
@@ -90,6 +91,7 @@ main > span {
   font-size: 2em;
   font-weight: 700;
   position: relative;
+  animation: move 5s ease-in-out infinite;
 }
 
 /* Reflections */
@@ -110,4 +112,26 @@ main .freelance::before {
 
 main .webDeveloper::before {
     content: "Web Developer"
+}
+
+main .freelance {
+    
+}
+
+main .webDeveloper {
+    animation-delay: 0.5s;
+}
+
+@keyframes move {
+    50% {
+        transform: translate(-20vw);
+    }
+
+    70% {
+        transform: translate(0vw);
+    }
+
+    80% {
+        transform: translate(-2vw);
+    }
 }
