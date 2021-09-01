@@ -145,15 +145,6 @@ main .webDeveloper {
   }
   main .info {
     width: 14em;
-    --radius: 1em;
-    display: block;
-    margin: 5% auto;
-    position: relative;
-    background-color: transparent;
-    border: unset;
     clip-path: unset;
-    transition: clip-path 0.2s linear;
-    color: white;
-    animation: bounce linear 1.5s infinite;
   }
 }
