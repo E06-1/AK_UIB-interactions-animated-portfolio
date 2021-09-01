@@ -1,0 +1,4 @@
+main {
+    flex-grow: 1;
+    background-image: radial-gradient(circle at center, hsl(200, 100%, 50%), hsl(200, 100%, 15%));
+}
